@@ -1,0 +1,10 @@
+.container-item {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  color: black;
+}
+
+.container-item > label {
+  width: 150px;
+}

@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -35,4 +36,401 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  background-color: #4CAF50;
+  width: 100%;
+   color: white;
+   font-weight: bold;
+   padding: 15px;
+   margin: 10px 0px;
+   border: none;
+   cursor: pointer;
+    }
+form {
+   border: 3px solid #f1f1f1;
+}
+input[type=text], input[type=password] {
+   width: 100%;
+   margin: 8px 0;
+   padding: 12px 20px;
+   display: inline-block;
+   border: 2px solid green;
+   box-sizing: border-box;
+}
+
+.select {
+     width: 100%;
+   margin: 8px 0;
+   padding: 12px 20px;
+   display: inline-block;
+   border: 2px solid green;
+   box-sizing: border-box;
+}
+
+button:hover {
+   opacity: 0.7;
+}
+.cancelbtn {
+   width: auto;
+   padding: 10px 18px;
+   margin: 10px 5px;
+}
+
+
+.container {
+   padding: 25px;
+   background-color: lightblue;
+   color: black;
+}
+
+:root
+ {
+  --yellow: #ff9800;
+ }
+/*BASE STYLES*/
+*
+ {
+  margin: 0;
+  padding: 0;
+ }
+*,*::before,*::after
+ {
+  box-sizing: inherit;
+ }
+
+html
+ {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+ }
+@media (max-width: 75em)
+ {
+  html
+  {
+   font-size: 60%;
+  }
+ }
+@media (max-width: 61.25em)
+ {
+  html
+  {
+   font-size: 58%;
+  }
+ }
+@media (max-width: 28.75em)
+ {
+  html
+  {
+   font-size: 55%;
+  }
+ }
+body
+ {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--yellow);
+ }
+ul
+ {
+  list-style: none;
+ }
+p, ul
+ {
+  color: #ffeb3b;
+ }
+a
+ {
+  text-decoration: none;
+  color: var(--yellow);
+ }
+img
+ {
+  display: block;
+  width: 100%;
+ }
+.form-group
+ {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+ }
+.form-group > p > a:hover
+ {
+  text-decoration: underline;
+ }
+.form-control {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+label
+ {
+  display:flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+ }
+.input-textarea {
+    min-height: 120px;
+    width: 100%;
+    padding: 0.625rem;
+}
+.submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+.submit-button:hover
+ {
+  background: var(--yellow);
+  color: black;
+ }
+/*BASE STYLES*/
+.nav
+ {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+ }
+.nav-list
+ {
+  display: flex;
+  margin-right: 2rem;
+ }
+@media (max-width: 28.75em)
+ {
+  .nav-list
+  {
+   margin: 0 1rem;
+  }
+ }
+.nav-list a
+ {
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+ }
+.nav-list a:hover
+ {
+  background: var(--yellow);
+  color: black;
+ }
+.welcome-section > h1,h2
+ {
+  color:var(--yellow);
+  font-style: oblique;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+ }
+.welcome-section > h1
+ {
+  font-size: 10rem;
+ }
+
+.welcome-section > h2
+ {
+  font-size: 7rem;
+ }
+.welcome-section
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/welcome.jpg");
+  background-size: cover;
+ }
+.content
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+ }
+.content h1
+ {
+  padding-top:5%;
+ }
+.wel-p
+ {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  padding: 5% 10% 0 10%;
+  color: #ffeb3b;
+ }
+.content > p > a:hover
+ {
+  text-decoration: underline;
+ }
+/*ABOUT US PAGE*/
+.about
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/about.jpg");
+  background-size: cover;
+ }
+.about-cont
+ {
+  margin:5%;
+  background-color:#cabbbb1f;
+ }
+.about-cont-cont
+ {
+  margin:2%;
+ }
+.about-cont-cont ul
+ {
+  list-style:inside;
+ }
+.about-ser
+ {
+  text-align:center;
+ }
+.about-ser a:hover
+ {
+  text-decoration:underline;
+ }
+/*ABOUT US PAGE*/
+/*SERVICES PAGE*/
+.service
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/s.jpg");
+  background-size: cover;
+ }
+.row
+ {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+ }
+.column
+ {
+  display: flex;
+  flex-direction:column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 5%;
+ }
+.item
+ {
+  height: 150px;
+ }
+.ser
+ {
+  display: flex;
+  align-items: center;
+ }
+.ser img
+ {
+  width:150px;
+  height:150px;
+ }
+.ser strong
+ {
+  font-size: xx-large;
+ }
+/*SERVICES PAGE*/
+/*BRANDS PAGE*/
+.brands
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/b.png");
+  background-size: cover;
+ }
+.bord-brand
+ {
+  margin-bottom: 5%;
+  border: 1px solid var(--yellow);
+  height:152px;
+ }
+/*BRANDS PAGE*/
+/*TESTIMONIALS PAGE*/
+.test
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/test.jpeg");
+ }
+/*TESTIMONIALS PAGE*/
+/*CONTACT US PAGE*/
+.contact
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/contact.jpg");
+  background-size:cover;
+ }
+/*CONTACT US PAGE*/
+.car
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./images/car.jpg");
+  background-size: cover;
+ }
+.user
+{
+display:none;
+}
+.drop:hover .user
+{
+display:flex;
+flex-direction:column;
+position:absolute;
+background:#000000;
 }

@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from "./navbar";
+import { ToastContainer, toast } from "react-toastify";
+  import 'react-toastify/dist/ReactToastify.css';
+import Routes from "./Routes";
+
+const checkAuth = () => {
+  const token = localStorage.getItem("jwtToken");
+  if (!token) {
+    return false;
+  }
+  return true;
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{
+        margin: "auto",
+      }}>
+        <ToastContainer
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
+        {<NavBar />}
+        <Routes />
+      </div>
     </div>
   );
 }

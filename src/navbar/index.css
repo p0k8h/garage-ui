@@ -1,0 +1,27 @@
+.link {
+  text-decoration: none;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 25px;
+  color: black;
+}
+
+.nav-item {
+  /* background-color: antiquewhite; */
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-item > a {
+  color: black;
+}
