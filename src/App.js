@@ -1,6 +1,8 @@
 import './App.css';
 import NavBar from "./navbar";
 import { ToastContainer } from "react-toastify";
+import {Helmet} from "react-helmet";
+
 import 'react-toastify/dist/ReactToastify.css';
 import Routes from "./Routes";
 
@@ -11,6 +13,9 @@ function App() {
         margin: "auto",
         width: "95%"
       }}>
+        <Helmet>
+          <title>Garage App</title>
+        </Helmet>
         <ToastContainer
           position="top-left"
           autoClose={5000}
