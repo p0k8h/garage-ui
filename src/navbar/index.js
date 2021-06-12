@@ -2,9 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import "./index.css";
-import LogoutImg from "./logout.png";
 import NavBar1 from "./navbar";
-import { isOfficeAssistant, isMechanic, isOwner } from "../config";
 
 const NavBar = (props) => {
 

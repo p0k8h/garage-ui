@@ -3,7 +3,7 @@ import NoRecord from "../norecord";
 
 import { API_URL } from "../../config";
 import { ErrorToaster, SuccessToaster } from "../toaster";
-import { isOfficeAssistant, isMechanic, isOwner } from "../../config";
+import { isOfficeAssistant, isOwner } from "../../config";
 import AddStock from "./addStock";
 const URL = `${API_URL}/stocks`;
 

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Switch,
   Route,
@@ -48,22 +48,6 @@ const AuthRoute = ({ component: Component, ...rest }) => {
     />
   )
 }
-
-const AdminRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      checkAuth() && localStorage.getItem("role") === "1" ? (
-        <Component {...props} />
-      ) : (
-        // <Redirect to={{ pathname: "/movies" }} />
-        // <Route component={NotFound} />
-        <h1>Not Found</h1>
-      )
-    }
-  />
-);
-
 
 export default function Routes() {
   return (

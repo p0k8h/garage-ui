@@ -2,16 +2,9 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import "./index.css";
-import { isOfficeAssistant, isMechanic, isOwner } from "../config"
+import { isMechanic, isOwner } from "../config"
 
 const NavBar1 = (props) => {
-  const checkAuth = () => {
-    const token = localStorage.getItem("jwtToken");
-    if (!token) {
-      return false;
-    }
-    return true;
-  };
 
   return (
     <>
