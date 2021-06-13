@@ -6,17 +6,17 @@ import { API_URL } from "../../config";
 
 
 const Invoice = () => {
-  const [orders, setOrders] = React.useState([]);
+  const [jobs, setJobs] = React.useState([]);
   const [showInvoice, setShowInvoice] = React.useState(false);
-  const [selectedOrderId, setSelectedOrderId] = React.useState();
+  const [selectedJobId, setSelectedJobId] = React.useState();
 
   React.useEffect(() => {
-    fetch(`${API_URL}/orders`)
+    fetch(`${API_URL}/jobs`)
       .then(response => response.json())
       .then(data => {
         const [order] = data;
-        setSelectedOrderId(order?.id);
-        setOrders(data);
+        setSelectedJobId(order?.id);
+        setJobs(data);
       })
       .catch(err => console.log(err));
   }, []);
@@ -25,7 +25,7 @@ const Invoice = () => {
 
     const { value } = e.target;
 
-    setSelectedOrderId(value);
+    setSelectedJobId(value);
     setShowInvoice(false);
   }
   return (
@@ -36,7 +36,7 @@ const Invoice = () => {
       <div>
         <h3 style={{
           textDecoration: "underline"
-        }}>Select a order to generate Invoice</h3>
+        }}>Select a job to generate Invoice</h3>
         <br />
         <div style={{
           display: "flex",
@@ -45,14 +45,18 @@ const Invoice = () => {
 
           <select name="orderID" className="select" style={{
             width: "auto"
-          }} onChange={handleInputChange} value={selectedOrderId}>
-            <option disabled>Select a Order</option>
-            {!!orders.length && orders.map(order => (
-              <option className="select" value={order.id}>{`${order.id} - ${order.partName} - ${order.amount}`}</option>
-            ))}
+          }} onChange={handleInputChange} value={selectedJobId}>
+            <option disabled>Select a Job</option>
+            {!!jobs.length ? jobs.map((order, index) => (
+              <option className="select" value={order.id}>{`${index + 1}. ${order.name} - $ ${order.amount}`}</option>
+            )) : <div>
+              No Jobs found
+
+                <div>Please add a Job </div>
+            </div>}
           </select>
 
-          {selectedOrderId && <button style={{
+          {selectedJobId && <button style={{
             width: "fit-content",
             marginLeft: "100px"
           }}
@@ -62,7 +66,7 @@ const Invoice = () => {
         <hr />
         {showInvoice && (
           <div>
-            <Bill orders={orders.find(order => order.id === +selectedOrderId)} />
+            <Bill jobs={jobs.find(order => order.id === +selectedJobId)} />
           </div>
         )}
 
@@ -73,7 +77,7 @@ const Invoice = () => {
 
 const Bill = (props) => {
 
-  const invoiceOrder = props.orders;
+  const invoiceOrder = props.jobs;
 
   const onButtonClick = () => {
     let domElement = document.getElementById('my-node');
@@ -91,99 +95,91 @@ const Bill = (props) => {
 
   return (
     <>
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-    }}>
       <div style={{
         display: "flex",
-        flexDirection: "column",
-        border: "2px solid",
-        padding: "20px",
-        margin: "20px",
-        color: "black",
-        width: "50%"
-      }} id="my-node">
-        <div>
-          <span>Date: </span>{new Date().toISOString().slice(0, 10)}
-        </div>
-        <br />
-        <br />
+        justifyContent: "center",
+        marginBottom: "10%"
+      }}>
         <div style={{
           display: "flex",
-          justifyContent: "space-between"
-        }}>
-          <div>Order Id:</div>
-          <div>{invoiceOrder.id}</div>
-
-        </div>
-        <hr />
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}><div>Employee Id: </div>
+          flexDirection: "column",
+          border: "2px solid",
+          padding: "20px",
+          margin: "20px",
+          color: "black",
+          width: "50%"
+        }} id="my-node">
           <div>
-
-            {invoiceOrder.employeeID}
+            <span>Date: </span>{new Date().toISOString().slice(0, 10)}
           </div>
-        </div>
-        <hr />
+          <br />
+          <br />
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}>
+            <div>Job Id:</div>
+            <div>{invoiceOrder.id}</div>
 
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}><div>Part Name:</div>
-          <div>
-
-            {invoiceOrder.partName}
           </div>
-        </div>
-        <hr />
+          <hr />
 
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}><div>Model Number:</div>
-          <div>
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}><div>Job Name:</div>
+            <div>
 
-            {invoiceOrder.modelNumber}
+              {invoiceOrder.name}
+            </div>
           </div>
-        </div>
-        <hr />
 
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}><div>Size: </div>
-          <div>
+          <hr />
 
-            {invoiceOrder.size}
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}><div>Customer Name:</div>
+            <div>
+
+              {`${invoiceOrder.firstName} ${invoiceOrder.lastName}`}
+            </div>
           </div>
-        </div>
-        <hr />
+          <hr />
 
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}><div>Quantity:</div>
-          <div>
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}><div>Hours:</div>
+            <div>
 
-            {invoiceOrder.quantity}
+              {invoiceOrder.hours}
+            </div>
           </div>
-        </div>
-        <hr />
+          <hr />
 
-        <div style={{
-          display: "flex",
-          justifyContent: "space-between"
-        }}><div>Total Amount:</div> <div></div>
-          <div>
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}><div>Is Completed: </div>
+            <div>
 
-            $ {invoiceOrder.amount}
+              {invoiceOrder.isCompleted ? "YES" : "NO"}
+            </div>
           </div>
+          <hr />
+
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}><div>Total Amount:</div> <div></div>
+            <div>
+
+              $ {invoiceOrder.amount}
+            </div>
+          </div>
+          <hr />
         </div>
-        <hr />
-      </div>
 
 
       </div>

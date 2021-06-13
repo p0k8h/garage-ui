@@ -23,7 +23,9 @@ const Employee = (props) => {
   }
 
   return (
-    <div>
+    <div style={{
+      marginBottom: "10%"
+    }}>
       <h1>Employee List:</h1>
       <hr />
       {employees.length ? <div className="grid-container">

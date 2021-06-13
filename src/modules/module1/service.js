@@ -5,6 +5,7 @@ import Imgs5 from "../../images/s5.PNG"
 import Imgs2 from "../../images/s2.PNG"
 import Imgs3 from "../../images/s3.PNG"
 import Imgs4 from "../../images/s4.PNG"
+import Footer from "./Footer";
 
 
 const Service = () => {
@@ -58,6 +59,7 @@ const Service = () => {
       </div>
     </div>
   </section>
+  <Footer />
 </>
 
   )

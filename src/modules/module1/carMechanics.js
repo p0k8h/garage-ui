@@ -5,6 +5,7 @@ import Img2 from "../../images/2.jpg"
 import Img3 from "../../images/3.jpg"
 import Img4 from "../../images/4.jpg"
 import Img5 from "../../images/5.jpg"
+import Footer from "./Footer";
 
 
 const Car = () => {
@@ -46,6 +47,7 @@ const Car = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
 
   );

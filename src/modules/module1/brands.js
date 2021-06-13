@@ -5,6 +5,7 @@ import BMWImg from "../../images/bmw.jpg"
 import MazdaImg from "../../images/mazda.jpg"
 import HyundaiImg from "../../images/hyundai.jpg"
 import BImg from "../../images/b.png"
+import Footer from "./Footer";
 
 const Brands = () => {
 
@@ -61,6 +62,7 @@ const Brands = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
 
   );

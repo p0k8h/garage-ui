@@ -3,6 +3,7 @@ import React from "react";
 import Test1 from "../../images/test1.jpg"
 import Test2 from "../../images/test2.jpg"
 import Test3 from "../../images/test3.jpg"
+import Footer from "./Footer";
 
 const Testimonials = () => {
   return (
@@ -54,7 +55,9 @@ const Testimonials = () => {
             </p>
           </div>
         </div>
-      </div></div></section></>
+      </div></div></section>
+      <Footer />
+      </>
 
   )
 }

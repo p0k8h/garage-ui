@@ -65,8 +65,8 @@ const AddCustomer = ({setShowAddPage, history}) => {
         <label for="phone"><b>Phone</b></label>
         <input type="text" placeholder="Phone" name="phone" required onChange={handleInputChange} value={customer.phone}/>
 
-        <label for="Address"><b>Address</b></label>
-        <input type="text" placeholder="Address" name="Address" required onChange={handleInputChange} value={customer.address}/>
+        <label for="address"><b>Address</b></label>
+        <input type="text" placeholder="Address" name="address" required onChange={handleInputChange} value={customer.address}/>
 
         <div style={{
           display: "flex",

@@ -53,7 +53,8 @@ const SignUp = (props) => {
       width: "50%",
       border: "2px solid black",
       padding: "10px",
-      marginTop: "50px"
+      marginTop: "50px",
+      marginBottom: "10%"
     }} >
       <center> <h1>Employee Sign Up Form:</h1></center>
       <form onSubmit={handleRegister}>

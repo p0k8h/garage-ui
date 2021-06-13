@@ -39,7 +39,9 @@ const Employee = (props) => {
   }
 
   return (
-    <div>
+    <div style={{
+      marginBottom: "10%"
+    }}>
       <h1>Job List:</h1>
       <hr />
       <button onClick={() => {
@@ -59,7 +61,9 @@ const Employee = (props) => {
                 <div className="grid-item">
                   <div className="data-cell-name"><div className="data-cell-value">ID:&nbsp; </div>{job.id}</div>
                   <div className="data-cell-name"><div className="data-cell-value">Job Name: &nbsp;</div>{job.name}</div>
+                  <div className="data-cell-name"><div className="data-cell-value">Customer Name: &nbsp;</div>{`${job.firstName} ${job.lastName}`}</div>
                   <div className="data-cell-name"><div className="data-cell-value">Hours: &nbsp;</div>{job.hours}</div>
+                  <div className="data-cell-name"><div className="data-cell-value">Amount: &nbsp;</div>$ {job.amount}</div>
                   <div className="data-cell-name"><div className="data-cell-value">Is Job Completed:&nbsp; </div>{job.isCompleted ? "YES" : "NO"}</div>
                   <div>
                     <button style={{

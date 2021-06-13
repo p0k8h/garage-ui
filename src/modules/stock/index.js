@@ -40,7 +40,9 @@ const Stock = () => {
   }
 
   return (
-    <div>
+    <div style={{
+      marginBottom: "10%"
+    }}>
       <h1>
         Stocks list
       </h1>

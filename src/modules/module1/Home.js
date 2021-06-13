@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
 
         </p>
       </section>
+      <Footer />
     </>
 
   );

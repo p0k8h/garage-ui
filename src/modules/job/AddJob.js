@@ -8,6 +8,8 @@ const Job = (props) => {
   const [job, setJob] = React.useState({
     role: 1
   });
+  const [customers, setCustomers] = React.useState([])
+  const [selectedCustomerId, setSelectedCustomerId] = React.useState();
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -19,11 +21,31 @@ const Job = (props) => {
 
   }
 
+  function handleSelectInputChange(e) {
+
+    const { value } = e.target;
+
+    setSelectedCustomerId(value);
+  }
+
+  React.useEffect(() => {
+    fetch(`${API_URL}/customers`).then(response => response.json()).then(data => {
+      if (data.length === 0) {
+          ErrorToaster("No customers found to generate invoice")
+          ErrorToaster("Please add a customer first")
+      }
+      setCustomers(data)
+      const [customer] = data;
+      setSelectedCustomerId(customer?.id);
+
+    }).catch(err => console.log(err))
+  }, [])
+
   function handleJob(e) {
     e.preventDefault();
 
     fetch(`${API_URL}/jobs`, {
-      body: JSON.stringify({ ...job, employeeID: localStorage.getItem("id") }),
+      body: JSON.stringify({ ...job, employeeID: localStorage.getItem("id"), customerID: selectedCustomerId }),
       method: "POST",
       headers: {
         'Content-type': 'application/json; charset=UTF-8'
@@ -76,6 +98,16 @@ const Job = (props) => {
           </div>
           <label htmlFor="hours"><b>Hours</b></label>
           <input type="number" className="select" placeholder="Enter hours" name="hours" required onChange={handleInputChange} value={job.hours} />
+
+          <label htmlFor="amount"><b>Amount</b></label>
+          <input type="number" className="select" placeholder="Enter Amount (number)" name="amount" required onChange={handleInputChange} value={job.amount} />
+
+          <label htmlFor="customerID"><b>Customer</b></label>
+          <select name="customerID" id="customerID" className="select" onChange={handleSelectInputChange} value={selectedCustomerId}>
+            {customers.map(customer => (
+              <option value={customer.id}>{`${customer.firstName} ${customer.lastName}`}</option>
+            ))}
+          </select>
 
           <div style={{
             display: "flex",

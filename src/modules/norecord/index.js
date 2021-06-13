@@ -8,7 +8,8 @@ const NoRecord = () => {
       marginTop: "70px",
       display: "flex",
       flexDirection: "column",
-      alignItems: "center"
+      alignItems: "center",
+      marginBottom: "10%"
     }}>
       <img src={SearchImg} alt="search icon" height="100px" style={{
         width: "auto"

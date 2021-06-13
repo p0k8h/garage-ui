@@ -46,10 +46,10 @@ const NavBar = (props) => {
             <Link to="/contact-us">Contact Us</Link>
 
           </li>
-          <li>
+          {/* <li>
             <Link to="/book">Book a service</Link>
 
-          </li>
+          </li> */}
           <li className="drop">
             <a>
               USER
@@ -57,9 +57,9 @@ const NavBar = (props) => {
             <ul className="user nav-list">
               {checkAuth() ? <>
                 <li>
-                <Link to="/home" onClick={logout}>Log Out </Link>
+                  <Link to="/home" onClick={logout}>Log Out </Link>
                 </li>
-               </> : <>
+              </> : <>
                 <li>
 
                   <Link to="/login">Log In</Link>
@@ -76,7 +76,8 @@ const NavBar = (props) => {
 
 
 
-                { checkAuth() && <NavBar1 />}
+      { checkAuth() && <NavBar1 />}
+
     </>
   );
 };

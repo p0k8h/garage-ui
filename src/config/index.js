@@ -11,3 +11,11 @@ export const ROLES = {
 export const isOfficeAssistant = () => +localStorage.getItem("role") === 1;
 export const isMechanic = () => +localStorage.getItem("role") === 2;
 export const isOwner = () => +localStorage.getItem("role") === 3;
+
+export const checkAuth = () => {
+  const token = localStorage.getItem("jwtToken");
+  if (!token) {
+    return false;
+  }
+  return true;
+}

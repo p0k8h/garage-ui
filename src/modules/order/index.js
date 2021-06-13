@@ -43,7 +43,9 @@ const Order = () => {
   }
 
   return (
-    <div>
+    <div style={{
+      marginBottom: "10%"
+    }}>
       <h1>
         Order list
       </h1>

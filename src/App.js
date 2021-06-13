@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import NavBar from "./navbar";
 import { ToastContainer } from "react-toastify";
@@ -5,8 +6,10 @@ import {Helmet} from "react-helmet";
 
 import 'react-toastify/dist/ReactToastify.css';
 import Routes from "./Routes";
+import Footer from "./modules/module1/Footer";
 
 function App() {
+
   return (
     <div className="App">
       <div style={{

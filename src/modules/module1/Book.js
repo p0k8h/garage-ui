@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 const Book = () => {
   return (
@@ -52,6 +53,7 @@ const Book = () => {
               </div>
             </form></div></div>
       </section>
+      <Footer />
     </>
 
   );
